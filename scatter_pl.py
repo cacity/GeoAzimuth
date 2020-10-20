@@ -17,7 +17,7 @@ data_LA = pd.read_csv('https://raw.githubusercontent.com/SolaireOAstora/PythonPl
 
 data_NY = pd.read_csv('https://raw.githubusercontent.com/SolaireOAstora/PythonPlotDemoMaterials/master/NYTemperature2019.csv')
 
-data_LD = pd.read_csv('ld-nsew.csv')
+data_LD = pd.read_csv('ld-s-2.csv')
  
 date_LA = data_LA['DATE'].to_numpy()
 TAVG_LA = data_LA['TAVG'].to_numpy()
@@ -37,24 +37,24 @@ sub = fig.add_subplot(111)
 monthsLoc = mpl.dates.MonthLocator()
 weeksLoc = mpl.dates.WeekdayLocator()
 
-sub.scatter(x,data_LD, marker= '8', s=15, color ='green')
+sub.scatter(x,data_LD, marker= '8', s=30, color ='green')
 sub.set_xlabel(r'$ Date$', fontsize =15)
 sub.set_ylabel(r'$ Azimuth $', fontsize =15)
 
 # sub.xaxis.set_major_locator(monthsLoc)
 # sub.xaxis.set_minor_locator(weeksLoc)
 
-date2_1 = dt.datetime(2018,1,1)
+date2_1 = dt.datetime(2019,1,1)
 date2_2 = dt.datetime(2020,10,11)
 
 # bg = dt.datetime.strptime(‘2018-01-01',’%Y-%m-%d')
 # ed = dt.datetime.strptime(‘2020-08-01',’%Y-%m-%d')
 # print(bg)
 
-#sub.set_ylim([40, 100])
+#sub.set_ylim(-40, 140)
 sub.set_xlim([date2_1,date2_2])
 
-plt.savefig('ld-nsew.png')
+plt.savefig('ld-s-2.png')
 plt.show()
 
 
